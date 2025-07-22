@@ -118,7 +118,7 @@ export default async function VerificationPage() {
                     asChild
                     className="bg-emerald-600 hover:bg-emerald-700"
                   >
-                    <Link href="/contact-support">Contact Support</Link>
+                    {/* <Link href="/contact-support">Contact Support</Link> */}
                   </Button>
                 </>
               )}

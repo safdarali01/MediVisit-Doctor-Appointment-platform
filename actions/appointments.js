@@ -138,6 +138,7 @@ export async function bookAppointment(formData) {
     revalidatePath("/appointments");
     return { success: true, appointment: appointment };
   } catch (error) {
+    // console.log("Private Key Loaded:", privateKey);
     console.error("Failed to book appointment:", error);
     throw new Error("Failed to book appointment:" + error.message);
   }
@@ -148,12 +149,16 @@ export async function bookAppointment(formData) {
  */
 async function createVideoSession() {
   try {
+    console.log("Creating Vonage video session...");
     const session = await vonage.video.createSession({ mediaMode: "routed" });
+    console.log("Session created:", session.sessionId);
     return session.sessionId;
   } catch (error) {
+    console.error("Vonage session creation error:", error);
     throw new Error("Failed to create video session: " + error.message);
   }
 }
+
 
 /**
  * Generate a token for a video session
