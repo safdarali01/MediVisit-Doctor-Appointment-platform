@@ -26,6 +26,7 @@ export default async function Header() {
         <Link href="/" className="flex items-center gap-2 cursor-pointer">
           <Image
             src="/logo.png"
+            // logo
             alt="MediVisit Logo"
             width={200}
             height={60}
